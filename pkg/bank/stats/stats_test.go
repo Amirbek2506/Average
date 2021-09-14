@@ -5,7 +5,7 @@ import (
 	"github.com/pkg/bank/types"
 )
 
-func StatsAvg()  {
+func ExampleAvg()  {
 	payments := []types.Payment{
 		{
 			ID:       1,
@@ -26,7 +26,7 @@ func StatsAvg()  {
 }
 
 
-func StatsTotalInCategory()  {
+func ExampleTotalInCategory()  {
 	category := types.Category("pay")
 	payments := []types.Payment{
 		{
