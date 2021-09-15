@@ -19,5 +19,8 @@ func TotalInCategory(payments []types.Payment, category types.Category) types.Mo
 			count++
 		}
 	}
+	if count <= 0{
+		return summa
+	}
 	return summa/types.Money(count)
 }
