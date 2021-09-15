@@ -51,3 +51,14 @@ func ExampleTotalInCategory()  {
 	// Output:
 	// 250
 }
+
+
+func ExampleTotalInCategory_empty()  {
+	category := types.Category("")
+	var payments []types.Payment
+
+	fmt.Println(TotalInCategory(payments,category))
+
+	// Output:
+	// 0
+}
