@@ -27,11 +27,11 @@ func ExampleAvg()  {
 
 
 func ExampleTotalInCategory()  {
-	category := types.Category("pay")
-	payments := []types.Payment{
+
+	fmt.Println(TotalInCategory([]types.Payment{
 		{
 			ID:       1,
-			Amount:   300,
+			Amount:   3,
 			Category: "pay",
 		},
 		{
@@ -41,13 +41,39 @@ func ExampleTotalInCategory()  {
 		},
 		{
 			ID:       3,
-			Amount:   200,
+			Amount:   4,
 			Category: "pay",
 		},
+	} ,
+		types.Category("fee")))
+
+	// Output:
+	// 200
+}
+
+
+func ExampleTotalInCategory_empty()  {
+	category := types.Category("")
+	payments := []types.Payment{
+			{
+				ID:       1,
+				Amount:   300,
+				Category: "pay",
+			},
+			{
+			ID:       2,
+				Amount:   200,
+				Category: "fee",
+			},
+			{
+			ID:       3,
+				Amount:   200,
+				Category: "pay",
+			},
 	}
 
 	fmt.Println(TotalInCategory(payments,category))
 
 	// Output:
-	// 250
+	// 0
 }

@@ -12,15 +12,10 @@ func Avg(payments []types.Payment) types.Money {
 
 func TotalInCategory(payments []types.Payment, category types.Category) types.Money {
 	var summa types.Money = 0
-	count := 0
 	for _, payment := range payments {
 		if payment.Category == category{
 			summa+=payment.Amount
-			count++
 		}
 	}
-	if count <= 0{
-		return summa
-	}
-	return summa/types.Money(count)
+	return summa
 }
